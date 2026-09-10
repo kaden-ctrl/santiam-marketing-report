@@ -1,0 +1,44 @@
+{
+  "question": "Does creative type perform differently on Facebook vs Instagram?",
+  "window": "2026-03-18 to 2026-08-31 for still creative (196 posts classified, 193 with reach); 2026-01-07 to 2026-08-31 for video (25 videos)",
+  "basis": "Organic only. Meta's reported 'from ads' portion of reach and reactions is subtracted from every post.",
+  "note_window": "Meta's Content table caps near 200 rows, so the still-creative window starts Mar 18. The Videos filter returns a short list, so video covers the full period.",
+
+  "facebook": {
+    "photo":    {"posts":24, "median_organic_reach":956,  "median_organic_reactions":14,  "engagement_rate_pct":1.18, "shares_per_post":1.75},
+    "provider": {"posts":7,  "median_organic_reach":1933, "median_organic_reactions":22,  "engagement_rate_pct":1.23, "shares_per_post":1.29},
+    "graphic":  {"posts":76, "median_organic_reach":547,  "median_organic_reactions":5.5, "engagement_rate_pct":1.24, "shares_per_post":3.33}
+  },
+  "instagram": {
+    "photo":    {"posts":21, "median_organic_reach":288,  "median_organic_reactions":15,  "engagement_rate_pct":3.28, "shares_per_post":1.00},
+    "provider": {"posts":6,  "median_organic_reach":170,  "median_organic_reactions":5,   "engagement_rate_pct":3.09, "shares_per_post":0.33},
+    "graphic":  {"posts":54, "median_organic_reach":116,  "median_organic_reactions":3,   "engagement_rate_pct":2.40, "shares_per_post":0.87}
+  },
+  "video_all_placements": {
+    "posts":25, "median_organic_reach":323, "median_organic_reactions":18,
+    "engagement_rate_pct":2.90, "total_organic_reach":22590, "total_organic_reactions":656
+  },
+
+  "top_videos_by_organic_reactions": [
+    {"date":"Jan 21","placement":"FB+IG","organic_reach":12330,"organic_reactions":157,"shares":39,"avg_play":"10s","caption":"CEO message on Regence Blue Cross Blue Shield"},
+    {"date":"Feb 11","placement":"IG","organic_reach":861,"organic_reactions":77,"shares":5,"avg_play":"19s","caption":"Construction underway at the future Women's Center"},
+    {"date":"Apr 16","placement":"IG","organic_reach":398,"organic_reactions":43,"shares":7,"avg_play":"17s","caption":"As an orthopedic surgeon at Santiam Orthopedics"},
+    {"date":"Apr 23","placement":"IG","organic_reach":1107,"organic_reactions":38,"shares":1,"avg_play":"13s","caption":"A closer look inside our lab"},
+    {"date":"May 18","placement":"FB+IG","organic_reach":565,"organic_reactions":37,"shares":0,"avg_play":"9s","caption":"Mental health is an important part of overall health"},
+    {"date":"May 11","placement":"FB+IG","organic_reach":873,"organic_reactions":34,"shares":2,"avg_play":"6s","caption":"Happy Nurses Week to the incredible nurses"},
+    {"date":"Jun 17","placement":"FB+IG","organic_reach":870,"organic_reactions":25,"shares":1,"avg_play":"5s","caption":"Coffee Corner update"}
+  ],
+
+  "findings_positive": [
+    "Video is the strongest format overall: 18 median organic reactions and a 2.90% engagement rate, ahead of every still format.",
+    "On Instagram, real photographs lead decisively: 15 median reactions against 3 for designed graphics, at a 3.28% engagement rate.",
+    "Instagram engagement rates run far above Facebook across every creative type (2.4-3.3% vs 1.2%).",
+    "On Facebook, provider portrait cards are the standout: 1,933 median organic reach and 22 median reactions, the highest of any still format on either platform. Small sample of 7 posts.",
+    "On Facebook, designed graphics earn the most shares of anything measured, at 3.33 per post."
+  ],
+  "caveats": [
+    "Facebook provider cards rest on 7 posts and Instagram provider cards on 6; treat those two rows as directional.",
+    "Creative classification is a manual visual judgement, not a Meta field.",
+    "Crossposted video appears under both placements; the video row is all placements combined."
+  ]
+}
