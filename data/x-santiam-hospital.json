@@ -1,0 +1,26 @@
+{
+  "account": "@SantiamHospital",
+  "platform": "X (Twitter)",
+  "period_requested": "2026-01-01 to 2026-08-31",
+  "period_actually_captured": "2026-05-25 to 2026-09-10 (40 consecutive posts)",
+  "captured": "2026-09-10",
+  "source": "x.com profile timeline, public view counts + engagement read from DOM",
+  "profile": {
+    "followers": 1397,
+    "following": 1550,
+    "total_posts_all_time": 6765,
+    "joined": "February 2014"
+  },
+  "sample_40_posts": {
+    "total_views": 470,
+    "median_views_per_post": 11,
+    "max_views": 49,
+    "min_views": 1,
+    "total_likes": 3,
+    "total_reposts": 0,
+    "total_replies": 0,
+    "avg_views_per_post": 11.75
+  },
+  "coverage_limitation": "Full Jan-Aug data could NOT be obtained. X Analytics (owner-only impressions) is gated behind X Premium, which this account does not have. The public profile timeline stops serving posts older than ~mid-May, and X search (from:SantiamHospital since:2026-01-01 until:2026-05-26) returned only a single result. The 40-post sample is therefore the defensible evidence base; it is consistent and unambiguous.",
+  "interpretation": "X is effectively dormant as an audience channel. 40 posts produced 470 total views (median 11) and 3 total likes. Reach per post is roughly 0.8% of the 1,397 follower base. Note the account follows 1,550 accounts vs 1,397 followers, typical of an unmanaged/auto-follow legacy account."
+}

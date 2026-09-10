@@ -1,0 +1,18 @@
+{
+  "account": "Santiam Hospital & Clinics",
+  "platform": "Facebook",
+  "page_id": "621194984585316",
+  "period": "2026-01-01 to 2026-08-31",
+  "source": "Meta Business Suite > Insights > Results (daily series scraped from chart DOM)",
+  "captured": "2026-09-10",
+  "displayed_totals": {
+    "Views": "3.9M (+31.3%)",
+    "Viewers": "1.1M (deduplicated unique people)",
+    "Content interactions": "12.7K (+15.7%)",
+    "Link clicks": "49.3K (+128.4%)",
+    "Visits": "29.7K (+37.7%)",
+    "Follows": "800 (+16.6%)"
+  },
+  "note_viewers": "Monthly Viewers values are sums of DAILY uniques and therefore overstate unique reach. Period-level unique Viewers = 1.1M as reported by Meta. Use Views for trend, not summed Viewers.",
+  "metrics": {"Views":{"total":3868116,"months":{"2026-01":627354,"2026-02":592186,"2026-03":534654,"2026-04":531682,"2026-05":576591,"2026-06":464295,"2026-07":322109,"2026-08":219245}},"Viewers":{"total_sum_of_daily":3334079,"months":{"2026-01":523504,"2026-02":501852,"2026-03":474586,"2026-04":488228,"2026-05":524913,"2026-06":353037,"2026-07":288267,"2026-08":179692}},"Content interactions":{"total":12655,"months":{"2026-01":2651,"2026-02":2125,"2026-03":1379,"2026-04":979,"2026-05":1121,"2026-06":2001,"2026-07":1251,"2026-08":1148}},"Link clicks":{"total":49322,"months":{"2026-01":7639,"2026-02":6740,"2026-03":6762,"2026-04":6591,"2026-05":7491,"2026-06":6212,"2026-07":5551,"2026-08":2336}},"Visits":{"total":29677,"months":{"2026-01":6188,"2026-02":4210,"2026-03":3753,"2026-04":3029,"2026-05":3117,"2026-06":3189,"2026-07":3780,"2026-08":2411}},"Follows":{"total":801,"months":{"2026-01":161,"2026-02":104,"2026-03":86,"2026-04":96,"2026-05":85,"2026-06":72,"2026-07":104,"2026-08":93}}}
+}

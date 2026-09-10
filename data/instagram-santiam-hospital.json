@@ -1,0 +1,18 @@
+{
+  "account": "santiamhospitalandclinics",
+  "platform": "Instagram",
+  "ig_id": "17841400296120085",
+  "period": "2026-01-01 to 2026-08-31",
+  "source": "Meta Business Suite > Insights > Results (daily series scraped from chart DOM)",
+  "captured": "2026-09-10",
+  "displayed_totals": {
+    "Views": "283.9K (+68.7%)",
+    "Reach": "139K (+24.1%) deduplicated",
+    "Content interactions": "3K (+25.8%)",
+    "Link clicks": "5K (+90.7%)",
+    "Visits": "3.1K (-20.9%)",
+    "Follows": "250 (+54.3%)"
+  },
+  "note_reach": "Monthly Reach values are sums of DAILY uniques and overstate unique reach. Period-level unique Reach = 139K as reported by Meta.",
+  "metrics": {"Views":{"total":283870,"months":{"2026-01":58920,"2026-02":41789,"2026-03":33274,"2026-04":23194,"2026-05":24307,"2026-06":41813,"2026-07":35210,"2026-08":25363}},"Reach":{"total_sum_of_daily":307945,"months":{"2026-01":94517,"2026-02":52509,"2026-03":28385,"2026-04":21989,"2026-05":20550,"2026-06":33743,"2026-07":31406,"2026-08":24846}},"Content interactions":{"total":2962,"months":{"2026-01":475,"2026-02":475,"2026-03":301,"2026-04":457,"2026-05":367,"2026-06":310,"2026-07":281,"2026-08":296}},"Link clicks":{"total":4983,"months":{"2026-01":767,"2026-02":528,"2026-03":509,"2026-04":643,"2026-05":649,"2026-06":725,"2026-07":673,"2026-08":489}},"Visits":{"total":3051,"months":{"2026-01":463,"2026-02":360,"2026-03":311,"2026-04":385,"2026-05":393,"2026-06":419,"2026-07":382,"2026-08":338}},"Follows":{"total":250,"months":{"2026-01":26,"2026-02":47,"2026-03":31,"2026-04":26,"2026-05":35,"2026-06":28,"2026-07":27,"2026-08":30}}}
+}

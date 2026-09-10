@@ -1,0 +1,18 @@
+{
+  "account": "Family Birth Center at Santiam Hospital",
+  "platform": "Facebook",
+  "page_id": "1072957276097142",
+  "period": "2026-01-01 to 2026-08-31",
+  "source": "Meta Business Suite > Insights > Results (daily series scraped from chart DOM)",
+  "captured": "2026-09-10",
+  "displayed_totals": {
+    "Views": "149.6K (+20.3%)",
+    "Viewers": "46.2K (deduplicated)",
+    "Content interactions": "4.9K (-42.8%)",
+    "Link clicks": "87 (-46%)",
+    "Visits": "2.6K (+5.3%)",
+    "Follows": "292 (+2.8%) [net; gross daily sum = 300]"
+  },
+  "note_viewers": "Monthly Viewers values are sums of DAILY uniques and overstate unique reach. Period-level unique Viewers = 46.2K as reported by Meta.",
+  "metrics": {"Views":{"total":149562,"months":{"2026-01":18040,"2026-02":17534,"2026-03":20045,"2026-04":23184,"2026-05":13432,"2026-06":17939,"2026-07":25058,"2026-08":14330}},"Viewers":{"total_sum_of_daily":111441,"months":{"2026-01":13777,"2026-02":12944,"2026-03":13673,"2026-04":16504,"2026-05":10745,"2026-06":13889,"2026-07":18585,"2026-08":11324}},"Content interactions":{"total":4875,"months":{"2026-01":1146,"2026-02":592,"2026-03":540,"2026-04":514,"2026-05":458,"2026-06":323,"2026-07":737,"2026-08":565}},"Link clicks":{"total":87,"months":{"2026-01":10,"2026-02":7,"2026-03":20,"2026-04":19,"2026-05":11,"2026-06":6,"2026-07":14,"2026-08":0}},"Visits":{"total":2568,"months":{"2026-01":330,"2026-02":291,"2026-03":290,"2026-04":450,"2026-05":277,"2026-06":264,"2026-07":418,"2026-08":248}},"Follows":{"total":300,"months":{"2026-01":45,"2026-02":37,"2026-03":25,"2026-04":56,"2026-05":33,"2026-06":30,"2026-07":50,"2026-08":24}}}
+}

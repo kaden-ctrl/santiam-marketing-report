@@ -1,0 +1,433 @@
+<title>Santiam Social Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap">
+
+<style>
+/* ============ Santiam Hospital & Clinics brand tokens ============
+   Navy  #00364E   Orange #EB8923   Warm secondary #E59A59
+   Type  Montserrat (headings) / Open Sans (body) — their own web system
+   ================================================================ */
+:root{
+  --navy:#00364E;
+  --navy-lift:#0A4A66;
+  --orange:#EB8923;
+  --warm:#E59A59;
+
+  --paper:#FFFFFF;
+  --paper-2:#F2F5F6;
+  --ink:#00364E;
+  --body:#2E4750;
+  --muted:#6E838C;
+  --rule:#D8E0E4;
+  --rule-mid:#B4C4CB;
+  --band:#00364E;
+  --band-ink:#FFFFFF;
+  --band-mute:#9FBECD;
+  --bar:#EB8923;
+  --bar-soft:#F7D4AE;
+  --grid:#E6ECEF;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#07202A;
+    --paper-2:#0C2C39;
+    --ink:#DCE9EE;
+    --body:#B3C8D1;
+    --muted:#7C97A3;
+    --rule:#153B4B;
+    --rule-mid:#1E4E63;
+    --band:#00293B;
+    --band-ink:#FFFFFF;
+    --band-mute:#8FB2C2;
+    --bar:#EB8923;
+    --bar-soft:#5A3B1C;
+    --grid:#123544;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#07202A;
+  --paper-2:#0C2C39;
+  --ink:#DCE9EE;
+  --body:#B3C8D1;
+  --muted:#7C97A3;
+  --rule:#153B4B;
+  --rule-mid:#1E4E63;
+  --band:#00293B;
+  --band-ink:#FFFFFF;
+  --band-mute:#8FB2C2;
+  --bar:#EB8923;
+  --bar-soft:#5A3B1C;
+  --grid:#123544;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--body);
+  font-family:"Open Sans",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15.5px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.sheet{max-width:1000px;margin:0 auto;background:var(--paper)}
+.pad{padding:0 44px}
+
+/* ---------- letterhead ---------- */
+.band{background:var(--band);padding:26px 44px 24px;display:flex;flex-wrap:wrap;gap:26px;align-items:flex-end;justify-content:space-between}
+.band .logo{width:250px;max-width:58vw;flex:none;display:block}
+.band .logo svg{width:100%;height:auto;display:block}
+/* reversed lockup: wordmark knocks out to white on the navy band, orange mark retained */
+.band .shl-st0{fill:#FFFFFF}
+.docmeta{text-align:right;color:var(--band-mute);font-size:11px;letter-spacing:.13em;text-transform:uppercase;line-height:2;font-weight:600}
+.docmeta strong{color:var(--band-ink);font-weight:700}
+.rule-orange{height:3px;background:var(--orange)}
+
+/* ---------- title block ---------- */
+.titleblock{padding:44px 44px 0}
+.kicker{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin:0 0 12px}
+h1{font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(28px,4.4vw,42px);line-height:1.14;letter-spacing:-.01em;color:var(--ink);margin:0;max-width:19ch;text-wrap:balance}
+.lede{font-size:16.5px;line-height:1.62;color:var(--body);max-width:66ch;margin:22px 0 0}
+.lede strong{color:var(--ink);font-weight:700}
+
+/* ---------- figures row ---------- */
+.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));margin:38px 0 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule-mid)}
+.fig{padding:20px 22px 18px;border-right:1px solid var(--rule)}
+.fig:last-child{border-right:none}
+.fig dt{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.fig dd{margin:0;font-family:"Montserrat",sans-serif;font-size:34px;font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums}
+.fig p{margin:8px 0 0;font-size:12.5px;color:var(--muted);line-height:1.42}
+
+/* ---------- sections ---------- */
+section{margin-top:52px}
+.head{border-bottom:1px solid var(--rule-mid);padding-bottom:9px;margin-bottom:20px;display:flex;align-items:baseline;gap:14px}
+.head h2{font-family:"Montserrat",sans-serif;font-weight:700;font-size:19px;letter-spacing:.005em;color:var(--ink);margin:0;flex:none}
+.head .note{font-size:13px;color:var(--muted);margin:0;line-height:1.45}
+
+/* ---------- tables ---------- */
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px}
+thead th{
+  font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--band);color:var(--band-ink);padding:10px 14px;text-align:right;white-space:nowrap;
+}
+thead th:first-child{text-align:left}
+td{padding:12px 14px;text-align:right;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--body)}
+td:first-child{text-align:left;white-space:normal;min-width:210px;color:var(--ink)}
+tbody tr:last-child td{border-bottom:none}
+tr.sum td{border-top:2px solid var(--ink);border-bottom:none;font-weight:700;color:var(--ink);background:var(--paper-2)}
+.chname{font-family:"Montserrat",sans-serif;font-weight:600;font-size:13.5px;color:var(--ink)}
+.chsub{display:block;font-size:12px;color:var(--muted);font-weight:400;font-family:"Open Sans",sans-serif}
+.rate{font-weight:700;color:var(--ink)}
+.mark{display:inline-block;width:3px;height:15px;background:var(--orange);margin-right:9px;vertical-align:-2px}
+.mark.dim{background:var(--rule-mid)}
+
+/* ---------- charts ---------- */
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));border-top:1px solid var(--rule-mid)}
+.ch{padding:18px 20px 16px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ch:last-child{border-right:none}
+.ch h3{font-family:"Montserrat",sans-serif;font-size:12.5px;font-weight:700;color:var(--ink);margin:0 0 2px}
+.ch .who{font-size:11.5px;color:var(--muted);margin:0 0 15px}
+.plot{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;align-items:end;height:88px;border-bottom:1px solid var(--rule-mid);background:
+  repeating-linear-gradient(to top,transparent,transparent 21px,var(--grid) 21px,var(--grid) 22px)}
+.bar{background:var(--bar);min-height:2px}
+.bar.low{background:var(--bar-soft)}
+.months{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px}
+.months span{font-size:9.5px;color:var(--muted);text-align:center;letter-spacing:.04em}
+.chfoot{margin-top:10px;padding-top:8px;border-top:1px dotted var(--rule);display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.chfoot b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+
+/* ---------- findings ---------- */
+.finding{border-bottom:1px solid var(--rule);padding:20px 0}
+.finding:first-of-type{border-top:1px solid var(--rule-mid)}
+.finding:last-of-type{border-bottom:none}
+.finding h3{font-family:"Montserrat",sans-serif;font-size:16.5px;font-weight:700;color:var(--ink);margin:0 0 6px;letter-spacing:-.005em}
+.finding p{margin:0;max-width:76ch;font-size:14.5px}
+.k{color:var(--ink);font-weight:700;box-shadow:inset 0 -6px 0 var(--bar-soft)}
+
+/* ---------- posts ---------- */
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin:0 0 14px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:9px;height:9px;margin-right:7px;vertical-align:0}
+.cap{display:block;color:var(--ink);font-size:13.5px;line-height:1.42;margin-bottom:3px}
+.when{font-size:11.5px;color:var(--muted)}
+.pill{font-family:"Montserrat",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;white-space:nowrap;border:1px solid currentColor}
+.pill.o{color:var(--orange)}
+.pill.g{color:var(--muted)}
+
+/* ---------- two columns ---------- */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));border-top:1px solid var(--rule-mid)}
+.col{padding:22px 26px 24px;border-right:1px solid var(--rule)}
+.col:last-child{border-right:none}
+.col h3{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 16px;color:var(--orange)}
+.col.b h3{color:var(--muted)}
+.col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+.col li{font-size:14px;line-height:1.5;padding-left:16px;border-left:2px solid var(--orange)}
+.col.b li{border-left-color:var(--rule-mid)}
+.col li b{color:var(--ink);font-weight:700}
+
+/* ---------- colophon ---------- */
+.colophon{margin-top:52px;background:var(--paper-2);padding:28px 44px 34px;border-top:2px solid var(--ink)}
+.colophon h3{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
+.colophon p{margin:0 0 11px;font-size:13px;line-height:1.62;color:var(--muted);max-width:92ch}
+.colophon b{color:var(--body);font-weight:700}
+.caveat{border-left:3px solid var(--orange);padding:2px 0 2px 15px;margin:16px 0}
+.sig{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+@media (max-width:640px){
+  .pad,.titleblock,.band,.colophon{padding-left:22px;padding-right:22px}
+  .docmeta{text-align:left}
+}
+</style>
+
+<div class="sheet">
+
+  <header class="band">
+    <span class="logo"><!--LOGO--></span>
+    <div class="docmeta">
+      <div><strong>Social Performance Report</strong></div>
+      <div>January 1 – August 31, 2026</div>
+      <div>Prepared by Duo Group</div>
+    </div>
+  </header>
+  <div class="rule-orange"></div>
+
+  <div class="titleblock">
+    <p class="kicker">Eight-month review · Five accounts · Four platforms</p>
+    <h1>Reach fell. Engagement rose. The small accounts won.</h1>
+    <p class="lede">Santiam content was seen <strong>4.33 million times</strong> and earned
+    <strong>20,923 interactions</strong> between January and August 2026. Facebook reach fell by roughly
+    two-thirds across the period — but the audience that remained engaged at nearly three times the spring rate,
+    and the two smallest accounts returned the strongest engagement rates of any channel.</p>
+
+    <dl class="figures">
+      <div class="fig"><dt>Views / impressions</dt><dd>4.33M</dd><p>Facebook is 89% of the total</p></div>
+      <div class="fig"><dt>Interactions</dt><dd>20,923</dd><p>Reactions, comments, shares, saves</p></div>
+      <div class="fig"><dt>New followers</dt><dd>1,539</dd><p>Four measurable accounts</p></div>
+      <div class="fig"><dt>Blended engagement</dt><dd>0.48%</dd><p>Interactions ÷ views, pooled</p></div>
+    </dl>
+  </div>
+
+  <div class="pad">
+
+    <section>
+      <div class="head"><h2>Channel ledger</h2>
+        <p class="note">Engagement rate is interactions ÷ views for every row, so the column compares like with like.</p></div>
+      <div class="tablewrap"><table>
+        <thead><tr><th scope="col">Channel</th><th scope="col">Views</th><th scope="col">Interactions</th>
+          <th scope="col">Eng. rate</th><th scope="col">New followers</th><th scope="col">Link clicks</th></tr></thead>
+        <tbody id="ledger"></tbody>
+      </table></div>
+    </section>
+
+    <section>
+      <div class="head"><h2>Reach by month</h2>
+        <p class="note">Each channel on its own scale — the shape is the point. Pale bars mark the weakest month.</p></div>
+      <div class="charts" id="cViews"></div>
+    </section>
+
+    <section>
+      <div class="head"><h2>Engagement rate by month</h2>
+        <p class="note">Facebook climbs as its reach falls. LinkedIn uses its own platform formula, which counts clicks.</p></div>
+      <div class="charts" id="cEng"></div>
+    </section>
+
+    <section>
+      <div class="head"><h2>New followers by month</h2>
+        <p class="note">January's spike is the affiliation announcement pulling audience onto the main page.</p></div>
+      <div class="charts" id="cFol"></div>
+    </section>
+
+    <section>
+      <div class="head"><h2>What the numbers say</h2></div>
+
+      <div class="finding">
+        <h3>Facebook reach fell 65% while engagement nearly tripled</h3>
+        <p>Views dropped from <span class="k">627K in January</span> to <span class="k">219K in August</span>.
+        Over the same months the engagement rate moved the opposite way — from a 0.18% floor in April to
+        <span class="k">0.52% in August</span>, the year's best. Fewer people are being served the page, and
+        those who are respond more.</p>
+      </div>
+
+      <div class="finding">
+        <h3>One post defined the year</h3>
+        <p>The Salem Health affiliation announcement on January 19 reached <span class="k">30,591</span> people
+        with 197 reactions and 53 shares — more than double the next post, and entirely unpaid. Community-defining
+        news travels; nothing else in eight months came close.</p>
+      </div>
+
+      <div class="finding">
+        <h3>The top posts by reactions are mostly bought</h3>
+        <p>Juneteenth leads on raw reactions with 534 — but <span class="k">528 of those came from ads</span>.
+        The same holds for MLK Day (188 of 204 paid), Father's Day, Presidents' Day and Memorial Day. Remove the
+        boost and the organic leaderboard is entirely local substance: the affiliation, the Regence explainer, the
+        Women's Center construction, the Mill City service update.</p>
+      </div>
+
+      <div class="finding">
+        <h3>Family Birth Center is the most efficient account you run</h3>
+        <p>On 4% of the main page's reach it produced <span class="k">39% as many interactions</span> — a 3.26%
+        engagement rate, roughly <span class="k">ten times</span> the flagship Facebook page. A narrow,
+        high-intent audience beats a broad one on every rate metric.</p>
+      </div>
+
+      <div class="finding">
+        <h3>LinkedIn is growing on zero spend</h3>
+        <p>28,333 impressions, 944 followers, 188 gained this period — with
+        <span class="k">zero sponsored impressions and zero paid follower gains</span> across all eight months.
+        Its 4.4% engagement rate is the highest of any channel, earned organically.</p>
+      </div>
+
+      <div class="finding">
+        <h3>X is dormant and needs a decision</h3>
+        <p>A 40-post sample returned <span class="k">470 total views and 3 likes</span> — a median of 11 views per
+        post against 1,397 followers. The account also follows more accounts (1,550) than follow it. At roughly
+        three posts a week, that is real production time returning nothing measurable.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="head"><h2>Top posts</h2><p class="note">Ranked by reach.</p></div>
+      <p class="legend">
+        <span><i style="background:var(--orange)"></i>Organic — no ad spend</span>
+        <span><i style="background:var(--rule-mid)"></i>Boosted — reach partly paid</span>
+      </p>
+      <div class="tablewrap"><table>
+        <thead><tr><th scope="col">Post</th><th scope="col">Reach</th><th scope="col">Reactions</th>
+          <th scope="col">Shares</th><th scope="col">Source</th></tr></thead>
+        <tbody id="posts"></tbody>
+      </table></div>
+    </section>
+
+    <section>
+      <div class="head"><h2>Where we go from here</h2></div>
+      <div class="cols">
+        <div class="col">
+          <h3>What's working</h3>
+          <ul>
+            <li><b>Substantive local news.</b> Affiliation updates, construction milestones, new providers and
+            service-line changes are the only posts clearing 5,000 organic reach.</li>
+            <li><b>Rising engagement quality on Facebook.</b> Four of the last five months beat the spring floor;
+            August was the year's best rate.</li>
+            <li><b>Link clicks up 128%</b> against the preceding 243-day period — 49,322 in eight months. People
+            are acting, not only looking.</li>
+            <li><b>Family Birth Center's focus.</b> A single-topic account with a defined audience out-performs
+            the flagship on every rate metric.</li>
+            <li><b>LinkedIn's organic base.</b> 4.4% engagement and steady growth with no budget behind it.</li>
+          </ul>
+        </div>
+        <div class="col b">
+          <h3>What we're working on</h3>
+          <ul>
+            <li><b>Arresting the Facebook reach slide.</b> The decline is steady across all eight months, not a
+            one-month algorithm shock — it needs a content answer.</li>
+            <li><b>Rebalancing the boost budget.</b> Spend concentrates on holiday greetings that buy reactions
+            and little else. Move it behind service-line and access posts.</li>
+            <li><b>Growing Instagram's scale.</b> Its 1.04% rate triples Facebook's, but it reaches 7% as many
+            people. The rate says the content works; the volume says it isn't being seen.</li>
+            <li><b>Deciding on X.</b> Revive it with a real strategy, or retire it and reinvest three posts a week.</li>
+            <li><b>Confirming the August link-click drop.</b> Facebook fell from 5,551 in July to 2,336 in August
+            and Family Birth Center recorded zero — worth verifying this is behaviour, not a tracking break.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="colophon">
+    <h3>Method &amp; limits</h3>
+    <p><b>Sources.</b> Facebook and Instagram figures come from Meta Business Suite → Insights → Results, read as
+    daily series and summed into calendar months. LinkedIn comes from Page Admin → Analytics (Content and
+    Followers). X figures were read from the public profile timeline. All cover January 1 – August 31, 2026 and
+    were pulled September 10, 2026.</p>
+    <p><b>"Views" is Meta's definition</b> — every time content was on screen, including repeat views by the same
+    person and including video and Reels. It is not unique reach. Deduplicated reach for the period was 1.1M for
+    the Facebook page, 139K for Instagram and 46.2K for Family Birth Center; those are the figures to quote for
+    "how many people," while views is the correct denominator for engagement rate.</p>
+    <p><b>Engagement rate</b> in the ledger and charts is interactions ÷ views, applied identically to every
+    channel. LinkedIn's own dashboard reports 4.4% because its formula also counts link clicks; both are correct,
+    and the monthly LinkedIn chart uses LinkedIn's definition as labelled.</p>
+    <div class="caveat">
+      <p><b>X coverage is partial.</b> Full January–August data could not be obtained. X Analytics — the
+      owner-only view with true impressions — sits behind X Premium, which this account does not have. The public
+      timeline stops serving posts older than roughly mid-May, and a date-filtered search returned a single
+      result. The X row therefore rests on a <b>40-post sample spanning May 25 – September 10</b>, using public
+      view counts rather than owner-reported impressions. It is consistent, but it is a sample, and it is
+      labelled as one throughout.</p>
+    </div>
+    <p><b>Family Birth Center follower count</b> is reported by Meta as 292 net for the period; summing the daily
+    series gives 300 gross. The ledger uses the gross figure for consistency with the other rows.</p>
+    <div class="sig">
+      <span>Santiam Hospital &amp; Clinics · Stayton, Oregon</span>
+      <span>Prepared by Duo Group · September 10, 2026</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug"];
+const D={
+ fb :{n:"Facebook",  w:"Santiam Hospital &amp; Clinics",
+      views:[627354,592186,534654,531682,576591,464295,322109,219245],
+      er:[0.42,0.36,0.26,0.18,0.19,0.43,0.39,0.52],
+      fol:[161,104,86,96,85,72,104,93],
+      t:{views:3868116,inter:12655,er:"0.33%",fol:801,clicks:49322}},
+ ig :{n:"Instagram", w:"santiamhospitalandclinics",
+      views:[58920,41789,33274,23194,24307,41813,35210,25363],
+      er:[0.81,1.14,0.90,1.97,1.51,0.74,0.80,1.17],
+      fol:[26,47,31,26,35,28,27,30],
+      t:{views:283870,inter:2962,er:"1.04%",fol:250,clicks:4983}},
+ fbc:{n:"Facebook",  w:"Family Birth Center",
+      views:[18040,17534,20045,23184,13432,17939,25058,14330],
+      er:[6.35,3.38,2.69,2.22,3.41,1.80,2.94,3.94],
+      fol:[45,37,25,56,33,30,50,24],
+      t:{views:149562,inter:4875,er:"3.26%",fol:300,clicks:87}},
+ li :{n:"LinkedIn",  w:"Santiam Hospital &amp; Clinics",
+      views:[3934,4574,3215,4457,4205,3969,2014,1965],
+      er:[8.1,3.5,2.3,5.0,4.6,3.3,3.9,3.1],
+      fol:[41,26,9,24,24,24,28,12],
+      t:{views:28333,inter:428,er:"1.51%",fol:188,clicks:"—"}}
+};
+const K=["fb","ig","fbc","li"];
+const nf=v=>typeof v==="number"?v.toLocaleString("en-US"):v;
+
+const led=document.getElementById("ledger");
+K.forEach(k=>{const d=D[k],t=d.t;
+  led.insertAdjacentHTML("beforeend",`<tr><td><span class="mark"></span><span class="chname">${d.n}<span class="chsub">${d.w}</span></span></td>
+  <td>${nf(t.views)}</td><td>${nf(t.inter)}</td><td class="rate">${t.er}</td><td>${nf(t.fol)}</td><td>${nf(t.clicks)}</td></tr>`);});
+led.insertAdjacentHTML("beforeend",`<tr><td><span class="mark dim"></span><span class="chname">X (Twitter)<span class="chsub">@SantiamHospital · 40-post sample</span></span></td>
+  <td>470</td><td>3</td><td class="rate">0.64%</td><td>n/a</td><td>—</td></tr>`);
+led.insertAdjacentHTML("beforeend",`<tr class="sum"><td>All channels</td><td>4,330,351</td><td>20,923</td>
+  <td>0.48%</td><td>1,539</td><td>54,392</td></tr>`);
+
+function chart(host,key,fmt,sfx,markLow){
+  const el=document.getElementById(host);
+  K.forEach(k=>{const d=D[k],a=d[key],max=Math.max(...a),min=Math.min(...a);
+    const bars=a.map((v,i)=>`<div class="bar${(markLow&&v===min)?" low":""}" style="height:${Math.max(2,Math.round(v/max*100))}%" title="${M[i]}: ${fmt(v)}${sfx}"></div>`).join("");
+    el.insertAdjacentHTML("beforeend",`<div class="ch"><h3>${d.n}</h3><p class="who">${d.w}</p>
+      <div class="plot">${bars}</div><div class="months">${M.map(m=>`<span>${m[0]}</span>`).join("")}</div>
+      <div class="chfoot"><span>low <b>${fmt(min)}${sfx}</b></span><span>high <b>${fmt(max)}${sfx}</b></span></div></div>`);});
+}
+chart("cViews","views",v=>v>=1000?Math.round(v/1000)+"K":v,"",true);
+chart("cEng","er",v=>v.toFixed(2),"%",false);
+chart("cFol","fol",v=>v,"",true);
+
+const P=[
+ ["Salem Health affiliation — the next step toward strengthening local care","Jan 19 · Facebook + Instagram · Photo",30591,197,53,0],
+ ["Coffee Corner now open 7:00 AM – 5:00 PM","Jun 29 · Facebook · Photo",12909,147,2,1],
+ ["A message from CEO Maggie Hudson on Regence Blue Cross Blue Shield","Jan 21 · Facebook + Instagram · Reel",12330,157,39,0],
+ ["Construction underway at the future Santiam Women's Center","Feb 11 · Facebook · Multi-media",8780,148,5,0],
+ ["Welcoming Taylor E. Brown, NP and Taylor Abdala, PA","Jan 22 · Facebook · Photo",7697,72,2,1],
+ ["Care for Mill City, Idanha, Detroit and the Santiam Canyon","May 28 · Facebook · Photo",7376,135,17,0],
+ ["Cheryl Nester Wolfe, RN — President &amp; CEO of Salem Health, on site","Feb 10 · Facebook · Multi-media",7237,58,5,0],
+ ["Join us — Santiam Hospital &amp; Salem Health community session","Feb 11 · Facebook · Photo",5539,28,57,0],
+ ["When seconds count, you shouldn't have to drive for care","Jul 29 · Facebook · Photo",5536,89,6,0],
+ ["Juneteenth — honoring the day","Jun 19 · Facebook · Photo",1580,534,6,1]
+];
+document.getElementById("posts").innerHTML=P.map(p=>`<tr>
+ <td><span class="cap">${p[0]}</span><span class="when">${p[1]}</span></td>
+ <td>${nf(p[2])}</td><td>${nf(p[3])}</td><td>${p[4]}</td>
+ <td><span class="pill ${p[5]?"g":"o"}">${p[5]?"Boosted":"Organic"}</span></td></tr>`).join("");
+</script>

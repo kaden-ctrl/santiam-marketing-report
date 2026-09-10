@@ -1,0 +1,25 @@
+{
+  "account": "Santiam Hospital & Clinics",
+  "platform": "LinkedIn",
+  "company_id": "74122166",
+  "period": "2026-01-01 to 2026-08-31 (243 days)",
+  "source": "LinkedIn Page Admin > Analytics > Content + Followers (Highcharts series read directly)",
+  "captured": "2026-09-10",
+  "totals": {
+    "total_followers_now": 944,
+    "new_followers_period": 188,
+    "impressions": 28333,
+    "reactions": 412,
+    "comments": 5,
+    "reposts": 11,
+    "engagement_rate_pct": 4.4,
+    "sponsored_impressions": 0,
+    "sponsored_followers": 0
+  },
+  "note": "100% organic — LinkedIn reports zero sponsored impressions and zero sponsored follower gains for the entire period.",
+  "monthly": {
+    "impressions":     {"2026-01":3934,"2026-02":4574,"2026-03":3215,"2026-04":4457,"2026-05":4205,"2026-06":3969,"2026-07":2014,"2026-08":1965},
+    "engagement_rate_pct": {"2026-01":8.1,"2026-02":3.5,"2026-03":2.3,"2026-04":5.0,"2026-05":4.6,"2026-06":3.3,"2026-07":3.9,"2026-08":3.1},
+    "new_followers":   {"2026-01":41,"2026-02":26,"2026-03":9,"2026-04":24,"2026-05":24,"2026-06":24,"2026-07":28,"2026-08":12}
+  }
+}
