@@ -5,57 +5,63 @@
 
 ## Accounts in scope
 
-| # | Account | Platform | Coupler.io source |
-|---|---------|----------|-------------------|
-| 1 | Santiam Hospital & Clinics | Facebook | `facebook-page-insights` |
-| 2 | Santiam Hospital & Clinics | Instagram | `instagram-insights` |
-| 3 | Santiam Hospital & Clinics | LinkedIn | `linkedin-public-data` |
-| 4 | Santiam Hospital & Clinics | X (Twitter) | `twitter` |
-| 5 | Family Birth Center at Santiam Hospital | Facebook | `facebook-page-insights` |
+| # | Account | Platform |
+|---|---------|----------|
+| 1 | Santiam Hospital & Clinics | Facebook |
+| 2 | Santiam Hospital & Clinics | Instagram |
+| 3 | Santiam Hospital & Clinics | LinkedIn |
+| 4 | Santiam Hospital & Clinics | X (Twitter) |
+| 5 | Family Birth Center at Santiam Hospital | Facebook |
 
-## Reports to pull per platform
+## Coupler.io pipeline
 
-**Facebook Page Insights** (both pages)
-- `page_performance_insights`, split monthly — followers, new followers, reach, content views,
-  post engagements, reactions
-- `my_pages_post_statistics` — per-post lifetime performance, for the top-posts section
+**Dataflow:** `Santiam Hospital & Clinics — Social Media (Jan–Aug 2026)`
+`5f393c33-6249-460f-9f70-524671152e19`
+https://app.coupler.io/app/dataflows/5f393c33-6249-460f-9f70-524671152e19/edit
 
-**Instagram Insights**
-- `profile_performance_insights`, split monthly — reach, impressions, profile views, follows
-- `post_insights_all_posts` — per-post totals for top posts
-- `profile_account_overview` — lifetime follower count
+Destination is the Claude connector, so report figures are queried straight from the
+dataflow rather than exported to a sheet.
 
-**LinkedIn Company Pages**
-- `pagePerformanceInsights`, split monthly — impressions, clicks, engagement rate
-- `pageFollowerGainsTrend` — organic vs. paid follower gains
-- `postsLifetimePerformanceInsights` — per-post performance for top posts
+### Sources (7)
 
-**X (Twitter) Public data**
-- `entity: authors` — follower count
-- `entity: tweets`, query `from:<handle>` — per-tweet likes, reposts, replies
+| Source | Report | Grain | Purpose |
+|--------|--------|-------|---------|
+| Facebook Page Insights | Page: performance insights | Monthly | Followers, new followers, page views, content views, post engagements, reactions |
+| Facebook Page Insights | Post: posts lifetime performance | Per post | Top posts — likes, comments, shares, reactions, clicks, views |
+| Instagram Insights | Profile: performance insights | Monthly | Reach, impressions, profile views, follows |
+| Instagram Insights | Post: performance totals | Per post | Top posts |
+| LinkedIn Company Pages | Page: performance insights | Monthly | Impressions, clicks, engagement rate |
+| LinkedIn Company Pages | Page: follower gains trend | Monthly | Organic vs. paid follower gains |
+| LinkedIn Company Pages | Post: individual posts lifetime performance | Per post | Top posts |
 
-## Known data limitation
+Credentials in use: Facebook `304716`, Instagram `304717`, LinkedIn `304718`.
 
-The Coupler.io X source is **public data only**. It returns publicly visible engagement
-(likes, reposts, replies) and follower counts — it does **not** expose owner-only analytics
-such as impressions or the impression-based engagement rate. X figures in the report are
-therefore engagement-per-follower, computed on public counts, and are labeled as such rather
-than being presented as a like-for-like engagement rate against the other three platforms.
+### Remaining manual step
 
-## Setup status
+Page/profile selection cannot be automated — the Coupler.io API exposes no `pages` or
+`profiles` field options, and each integration declares selection as wizard-only. All seven
+sources are otherwise fully configured (report type, date range, monthly split, metric sets);
+each needs its page/profile picked in the wizard.
 
-Coupler.io workspace is empty — no credentials, no dataflows, no datasets. Blocked on the
-one-time browser authorization for each provider:
+**Select only the Santiam pages.** The Duo Group Facebook and LinkedIn accounts administer
+many client pages, and selecting all of them is what triggers the plan's account cap.
 
-- Facebook — https://app.coupler.io/app/connections/facebook/new
-- Instagram — https://app.coupler.io/app/connections/instagram/new
-- LinkedIn — https://app.coupler.io/app/connections/linkedin/new
-- X (Twitter) — https://app.coupler.io/app/connections/twitter/new
+## Known data limitations
 
-Page/profile selection happens in the Coupler.io wizard and cannot be automated.
+**X (Twitter).** The Coupler.io X source is public-data only. It returns publicly visible
+engagement (likes, reposts, replies) and follower counts — it does **not** expose owner-only
+analytics such as impressions or an impression-based engagement rate. No X credential is
+connected. X figures, if included, are engagement-per-follower on public counts and are
+labeled as such rather than presented as a like-for-like engagement rate against the other
+three platforms. True X impressions require an X Analytics CSV export.
+
+**Account cap.** The first attempt (via the all-in-one social template) failed with
+"You've exceeded the maximum number of accounts allowed by your plan." That template pulls in
+five sources including YouTube and Google Analytics. The replacement dataflow above is scoped
+to the three platforms that matter, and the Google Analytics credential (`304719`) that the
+template created is not needed for this report.
 
 ## Posting cadence (from the weekly social outlines)
 
 Santiam Hospital FB 4 posts/week · IG 3/week · X 3/week · Family Birth Center FB 3/week.
-(The Santiam Foundation FB/IG accounts are also managed weekly but are out of scope for
-this report.)
+(The Santiam Foundation FB/IG accounts are also managed weekly but are out of scope.)
