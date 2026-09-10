@@ -87,3 +87,21 @@ template created is not needed for this report.
 
 Santiam Hospital FB 4 posts/week · IG 3/week · X 3/week · Family Birth Center FB 3/week.
 (The Santiam Foundation FB/IG accounts are also managed weekly but are out of scope.)
+
+## Sources investigated and ruled out
+
+**See Through Dashboard** (`seethroughtracking.duogroup.com`) — Duo Group's in-house
+replacement for Agency Analytics (Next.js + Supabase). Reviewed from the source archive in
+Drive. It is a **paid-advertising** portal only: `metric_snapshots` stores spend, impressions,
+clicks, conversions, conversion value, CPC, CPA and ROAS, and `platform_connections` supports
+exactly `google_ads`, `meta_ads` and `linkedin_ads`. There are no organic fields anywhere in
+the schema or the UI — no followers, engagement rate, reactions, shares, saves, or per-post
+organic performance. (A grep for organic metric names returns only false positives:
+`<AreaChart`, "unreachable", "reaches here".)
+
+It therefore cannot supply anything this report needs. It remains the right home for the
+Google Ads and Meta Ads side of Santiam's reporting.
+
+The host is also unreachable from the session container — the environment's network policy
+returns 403 on the proxy tunnel — and the browser here holds none of the logged-in sessions
+for Meta Business Suite, LinkedIn, or the portal itself.
