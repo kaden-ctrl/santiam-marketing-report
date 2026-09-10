@@ -79,7 +79,6 @@ WORKING = [
     ("Instagram engagement runs well ahead of Facebook", "across every creative type, at 2.4% to 3.3%."),
     ("Facebook loves meeting the team.", "Provider introductions reach a median 1,933 people there, the widest of any still format."),
     ("Graphics earn the shares.", "On Facebook they average 3.33 shares per post, the most of anything measured."),
-    ("Community news travels furthest.", "The Salem Health affiliation post reached 30,591 people with no spend behind it."),
 ]
 
 NEXT = [
