@@ -36,15 +36,37 @@ dataflow rather than exported to a sheet.
 
 Credentials in use: Facebook `304716`, Instagram `304717`, LinkedIn `304718`.
 
-### Remaining manual step
+### Status
 
-Page/profile selection cannot be automated — the Coupler.io API exposes no `pages` or
-`profiles` field options, and each integration declares selection as wizard-only. All seven
-sources are otherwise fully configured (report type, date range, monthly split, metric sets);
-each needs its page/profile picked in the wizard.
+All seven sources are fully configured and validated (`configured: true`), each scoped to the
+correct Santiam account:
 
-**Select only the Santiam pages.** The Duo Group Facebook and LinkedIn accounts administer
-many client pages, and selecting all of them is what triggers the plan's account cap.
+- Facebook — Santiam Hospital & Clinics (`621194984585316`) and Family Birth Center at
+  Santiam Hospital (`1072957276097142`)
+- Instagram — `santiamhospitalandclinics` (`17841400296120085`)
+- LinkedIn — Santiam Hospital & Clinics (`74122166`)
+
+A stray Facebook Ads (Meta Ads) source that appeared during wizard setup has been disabled;
+it is not part of this report.
+
+**Blocked.** A full run on 2026-09-10 failed on every dataset with:
+
+> You've exceeded the maximum number of accounts allowed by your plan.
+> Please upgrade to add more connections or disable an existing one.
+
+The cap is enforced at the workspace level, not per dataflow — datasets scoped to a single
+page fail identically to multi-page ones, so no amount of narrowing the dataflow clears it.
+Resolving it requires a UI/billing action that the MCP surface does not expose (there is no
+delete-credential tool):
+
+1. Delete the failed all-in-one social template dataflow.
+2. Delete the Google Analytics connection (`304719`) — unused by this report.
+3. Re-run this dataflow.
+
+If the cap persists after freeing those slots, the plan's account allowance is genuinely
+below what four accounts require, and the choice is upgrading the plan or falling back to
+manual CSV exports (Meta Business Suite covers Facebook and Instagram; LinkedIn and X each
+export separately).
 
 ## Known data limitations
 
