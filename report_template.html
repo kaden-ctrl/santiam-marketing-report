@@ -4,15 +4,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap">
 
 <style>
-/* ===== Santiam Hospital & Clinics — one-sheet performance report =====
+/* ===== Santiam Hospital & Clinics: organic content review, one sheet =====
    Brand: navy #00364E · orange #EB8923 · Montserrat / Open Sans
-   Sheet: US Letter portrait, 816 x 1056 px at 96dpi = 8.5in x 11in
-   ==================================================================== */
+   Sheet: US Letter portrait, 816 x 1056 px at 96dpi
+   ======================================================================== */
 :root{
   --navy:#00364E; --orange:#EB8923;
   --ink:#00364E; --body:#33505A; --muted:#758C96;
   --rule:#D9E1E5; --rule-mid:#AFC1C9; --wash:#F4F7F8;
-  --bar:#EB8923; --bar-soft:#F8DCBC; --grid:#E9EFF1;
+  --bar:#EB8923; --bar2:#9DB6BF; --bar3:#CBD8DD; --grid:#E9EFF1;
   --stage:#DDE4E7;
 }
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --stage:#0B222C; } }
@@ -20,134 +20,119 @@
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--stage);
-  font-family:"Open Sans",Arial,sans-serif; color:var(--body);
-  -webkit-font-smoothing:antialiased;
-}
-.stage{overflow-x:auto;padding:26px 16px 40px;display:flex;justify-content:flex-start}
+body{margin:0;background:var(--stage);font-family:"Open Sans",Arial,sans-serif;color:var(--body);
+  -webkit-font-smoothing:antialiased}
+.stage{overflow-x:auto;padding:26px 16px 40px}
 .hint{max-width:816px;margin:0 auto 14px;font-family:"Montserrat",sans-serif;font-size:11px;
   letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center}
 
-/* ---- the sheet ---- */
-.sheet{
-  width:816px; height:1056px; flex:none; margin:0 auto;
-  background:#FFFFFF; color:var(--body);
+.sheet{width:816px;height:1056px;margin:0 auto;background:#FFF;color:var(--body);
   box-shadow:0 2px 6px rgba(0,0,0,.14),0 18px 50px -22px rgba(0,0,0,.5);
-  display:flex; flex-direction:column; overflow:hidden;
-}
-.inner{flex:1;display:flex;flex-direction:column;padding:20px 34px 16px;gap:13px;min-height:0}
+  display:flex;flex-direction:column;overflow:hidden}
+.inner{flex:1;display:flex;flex-direction:column;padding:18px 34px 14px;gap:11px;min-height:0}
 
-/* ---- letterhead ---- */
+/* letterhead */
 .band{background:var(--navy);padding:13px 34px 12px;display:flex;align-items:flex-end;
   justify-content:space-between;gap:20px;flex:none}
 .band .logo{width:212px;flex:none}
 .band .logo svg{width:100%;height:auto;display:block}
-.band .shl-st0{fill:#FFFFFF}           /* reversed lockup on navy */
-.meta{text-align:right;color:#9FBECD;font-family:"Montserrat",sans-serif;font-size:8px;
-  font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1.85}
-.meta strong{color:#fff;font-weight:700;font-size:9px}
+.band .shl-st0{fill:#FFFFFF}
+.meta{text-align:right;color:#9FBECD;font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;line-height:1.85}
+.meta strong{color:#fff;font-size:9px}
 .hair{height:3px;background:var(--orange);flex:none}
 
-/* ---- masthead row: headline + figures ---- */
-.top{display:grid;grid-template-columns:1fr 300px;gap:22px;align-items:start}
+/* headline */
+.top{display:grid;grid-template-columns:1fr 292px;gap:20px;align-items:start}
 .kicker{font-family:"Montserrat",sans-serif;font-size:7.5px;font-weight:700;letter-spacing:.19em;
   text-transform:uppercase;color:var(--orange);margin:0 0 6px}
-h1{font-family:"Montserrat",sans-serif;font-weight:700;font-size:23px;line-height:1.16;
-  letter-spacing:-.012em;color:var(--ink);margin:0 0 8px;text-wrap:balance}
-.lede{margin:0;font-size:9.2px;line-height:1.52;color:var(--body)}
+h1{font-family:"Montserrat",sans-serif;font-weight:700;font-size:24px;line-height:1.14;
+  letter-spacing:-.013em;color:var(--ink);margin:0 0 8px;text-wrap:balance}
+.lede{margin:0;font-size:9px;line-height:1.5;color:var(--body)}
 .lede b{color:var(--ink);font-weight:700}
 
 .figs{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);border-left:1px solid var(--rule)}
-.fig{padding:7px 10px 8px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.fig dt{font-family:"Montserrat",sans-serif;font-size:6.5px;font-weight:700;letter-spacing:.13em;
+.fig{padding:6px 9px 7px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.fig dt{font-family:"Montserrat",sans-serif;font-size:6.2px;font-weight:700;letter-spacing:.12em;
   text-transform:uppercase;color:var(--muted);margin:0 0 3px}
-.fig dd{margin:0;font-family:"Montserrat",sans-serif;font-size:20px;font-weight:700;line-height:1;
+.fig dd{margin:0;font-family:"Montserrat",sans-serif;font-size:19px;font-weight:700;line-height:1;
   letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums}
-.fig p{margin:3px 0 0;font-size:6.8px;color:var(--muted);line-height:1.32}
+.fig p{margin:3px 0 0;font-size:6.5px;color:var(--muted);line-height:1.3}
 
-/* ---- section heads ---- */
-.h{display:flex;align-items:baseline;gap:9px;border-bottom:1px solid var(--rule-mid);
-  padding-bottom:4px;margin:0 0 7px;flex:none}
-.h h2{font-family:"Montserrat",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.02em;
-  color:var(--ink);margin:0;flex:none}
-.h span{font-size:7.4px;color:var(--muted);line-height:1.3}
+/* section heads */
+.h{display:flex;align-items:baseline;gap:8px;border-bottom:1px solid var(--rule-mid);
+  padding-bottom:4px;margin:0 0 6px;flex:none}
+.h h2{font-family:"Montserrat",sans-serif;font-weight:700;font-size:10.5px;color:var(--ink);margin:0;flex:none}
+.h span{font-size:7.2px;color:var(--muted);line-height:1.3}
 
-/* ---- ledger ---- */
-table{border-collapse:collapse;width:100%;font-size:8.4px}
-thead th{background:var(--navy);color:#fff;font-family:"Montserrat",sans-serif;font-size:6.5px;
-  font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:5px 8px;text-align:right;white-space:nowrap}
+/* tables */
+table{border-collapse:collapse;width:100%;font-size:8.2px}
+thead th{background:var(--navy);color:#fff;font-family:"Montserrat",sans-serif;font-size:6.3px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:5px 7px;text-align:right;white-space:nowrap}
 thead th:first-child{text-align:left}
-td{padding:5.5px 8px;text-align:right;border-bottom:1px solid var(--rule);
-  font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--body)}
+td{padding:6px 7px;text-align:right;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums;
+  white-space:nowrap;color:var(--body)}
 td:first-child{text-align:left;color:var(--ink)}
-tr.sum td{border-top:1.5px solid var(--ink);border-bottom:none;font-weight:700;color:var(--ink);background:var(--wash)}
-.cn{font-family:"Montserrat",sans-serif;font-weight:600;font-size:8.4px;color:var(--ink)}
-.cs{color:var(--muted);font-weight:400;font-family:"Open Sans",sans-serif;font-size:7.4px}
-.rate{font-weight:700;color:var(--ink)}
-.tick{display:inline-block;width:2.5px;height:9px;background:var(--orange);margin-right:6px;vertical-align:-1px}
-.tick.dim{background:var(--rule-mid)}
+tbody tr:last-child td{border-bottom:none}
+.cn{font-family:"Montserrat",sans-serif;font-weight:700;font-size:8.6px;color:var(--ink)}
+.cs{display:block;color:var(--muted);font-weight:400;font-size:6.8px;line-height:1.3;white-space:normal}
+.big{font-family:"Montserrat",sans-serif;font-weight:700;font-size:11px;color:var(--ink)}
+.win{color:var(--orange)}
 
-/* ---- charts ---- */
-.charts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule-mid)}
-.ch{padding:8px 10px 7px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.ch:last-child{border-right:none}
-.ch h3{font-family:"Montserrat",sans-serif;font-size:7.8px;font-weight:700;color:var(--ink);margin:0}
-.ch .who{font-size:6.6px;color:var(--muted);margin:0 0 7px}
-.plot{display:grid;grid-template-columns:repeat(8,1fr);gap:2.5px;align-items:end;height:44px;
-  border-bottom:1px solid var(--rule-mid);
-  background:repeating-linear-gradient(to top,transparent,transparent 10px,var(--grid) 10px,var(--grid) 11px)}
-.bar{background:var(--bar);min-height:1.5px}
-.bar.low{background:var(--bar-soft)}
-.mo{display:grid;grid-template-columns:repeat(8,1fr);gap:2.5px;margin-top:3px}
-.mo span{font-size:5.8px;color:var(--muted);text-align:center}
-.cf{margin-top:5px;display:flex;justify-content:space-between;font-size:6.5px;color:var(--muted)}
-.cf b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+/* data bar inside cell */
+.dbwrap{display:flex;align-items:center;gap:6px;justify-content:flex-end}
+.db{height:9px;background:var(--bar);flex:none}
+.db.g2{background:var(--bar2)} .db.g3{background:var(--bar3)}
 
-/* ---- split rows ---- */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+/* effort vs return */
+.evr{display:flex;flex-direction:column;gap:7px}
+.evrow{display:grid;grid-template-columns:118px 1fr;align-items:center;gap:10px}
+.evlab{font-family:"Montserrat",sans-serif;font-size:7.2px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);text-align:right}
+.evbar{display:flex;height:19px;overflow:hidden}
+.seg{display:flex;align-items:center;justify-content:center;font-family:"Montserrat",sans-serif;
+  font-size:7.6px;font-weight:700;color:#fff;letter-spacing:.02em}
+.seg.s1{background:var(--orange)}
+.seg.s2{background:var(--bar2)}
+.seg.s3{background:var(--bar3);color:var(--ink)}
+.evkey{display:flex;gap:14px;justify-content:flex-end;font-size:6.8px;color:var(--muted);margin-bottom:2px}
+.evkey i{display:inline-block;width:8px;height:8px;margin-right:5px;vertical-align:-1px}
 
-.find{border-bottom:1px solid var(--rule);padding:6px 0}
-.find:last-child{border-bottom:none;padding-bottom:0}
-.find h4{font-family:"Montserrat",sans-serif;font-size:8.6px;font-weight:700;color:var(--ink);margin:0 0 2px}
-.find p{margin:0;font-size:7.8px;line-height:1.44;color:var(--body)}
-.k{color:var(--ink);font-weight:700}
-
-.posts{width:100%;font-size:7.6px}
-.posts td{padding:4.5px 0;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
-.posts td:first-child{text-align:left;white-space:normal;padding-right:8px;line-height:1.32}
-.posts tr:last-child td{border-bottom:none}
-.posts .pw{color:var(--ink);display:block}
-.posts .pd{color:var(--muted);font-size:6.6px}
-.posts th{background:transparent;font-family:"Montserrat",sans-serif;font-size:6.2px;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:right;padding:0 0 4px;
-  border-bottom:1px solid var(--rule-mid)}
+/* posts */
+.posts td{padding:4.5px 0;border-bottom:1px solid var(--rule)}
+.posts td:first-child{padding-right:8px;white-space:normal;line-height:1.3}
+.posts .pw{display:block;color:var(--ink);font-size:7.6px}
+.posts .pd{font-size:6.4px;color:var(--muted)}
+.tagp{display:inline-block;font-family:"Montserrat",sans-serif;font-size:5.6px;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;padding:1px 4px;border:.8px solid currentColor}
+.tagp.ph{color:var(--orange)} .tagp.gr{color:var(--muted)}
+.posts th{background:transparent;color:var(--muted);font-family:"Montserrat",sans-serif;font-size:6px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:0 0 4px;
+  border-bottom:1px solid var(--rule-mid);text-align:right}
 .posts th:first-child{text-align:left}
-.pill{display:inline-block;font-family:"Montserrat",sans-serif;font-size:5.8px;font-weight:700;
-  letter-spacing:.08em;text-transform:uppercase;padding:1px 4px;border:.8px solid currentColor}
-.pill.o{color:var(--orange)} .pill.g{color:var(--muted)}
 
+/* split + lists */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
 .list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
-.list li{font-size:7.8px;line-height:1.42;padding-left:9px;border-left:2px solid var(--orange);color:var(--body)}
+.list li{font-size:7.6px;line-height:1.4;padding-left:9px;border-left:2px solid var(--orange);color:var(--body)}
 .list.b li{border-left-color:var(--rule-mid)}
 .list li b{color:var(--ink);font-weight:700}
 
-/* ---- footer ---- */
-.foot{border-top:1.5px solid var(--ink);padding-top:7px;font-size:6.6px;line-height:1.46;
-  color:var(--muted);display:flex;gap:18px;flex:none}
+/* footer */
+.foot{border-top:1.5px solid var(--ink);padding-top:6px;font-size:6.4px;line-height:1.45;color:var(--muted);
+  display:flex;gap:16px;flex:none}
 .foot p{margin:0}
 .foot b{color:var(--body);font-weight:700}
-.foot .caveat{border-left:2px solid var(--orange);padding-left:8px;flex:none;width:250px}
-.sig{margin-top:6px;padding-top:5px;border-top:1px solid var(--rule);display:flex;
-  justify-content:space-between;font-size:6.4px;color:var(--muted);flex:none}
+.foot .cav{border-left:2px solid var(--orange);padding-left:8px;flex:none;width:238px}
+.sig{margin-top:5px;padding-top:4px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;
+  font-size:6.2px;color:var(--muted);flex:none}
 
-/* ---- print ---- */
 @page{size:Letter portrait;margin:0}
 @media print{
   body{background:#fff}
-  .stage{padding:0;display:block;overflow:visible}
+  .stage{padding:0;overflow:visible}
   .hint{display:none}
-  .sheet{box-shadow:none;margin:0;width:8.5in;height:11in}
+  .sheet{box-shadow:none;width:8.5in;height:11in}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 :focus-visible{outline:2px solid var(--orange);outline-offset:2px}
@@ -160,7 +145,7 @@ tr.sum td{border-top:1.5px solid var(--ink);border-bottom:none;font-weight:700;c
   <header class="band">
     <span class="logo"><!--LOGO--></span>
     <div class="meta">
-      <div><strong>Social Performance Report</strong></div>
+      <div><strong>Organic Content Review</strong></div>
       <div>January 1 &ndash; August 31, 2026</div>
       <div>Prepared by Duo Group</div>
     </div>
@@ -171,98 +156,96 @@ tr.sum td{border-top:1.5px solid var(--ink);border-bottom:none;font-weight:700;c
 
     <div class="top">
       <div>
-        <p class="kicker">Eight-month review &middot; Five accounts &middot; Four platforms</p>
-        <h1>Reach fell. Engagement rose.<br>The small accounts won.</h1>
-        <p class="lede">Santiam content was seen <b>4.33 million times</b> and earned <b>20,923 interactions</b>
-        between January and August 2026. Facebook reach fell by roughly two-thirds across the period &mdash; but
-        the audience that remained engaged at nearly three times the spring rate, and the two smallest accounts
-        returned the strongest engagement rates of any channel.</p>
+        <p class="kicker">Organic performance &middot; What the camera beats the template at</p>
+        <h1>Real photos out-earn made graphics, four to one.</h1>
+        <p class="lede">Every Facebook and Instagram post from March 18 to August 31 was pulled apart and its
+        creative hand-classified, with all boosted reach and boosted reactions stripped out. Posts built from
+        <b>real photographs of staff, patients and events</b> earn <b>3.8 times</b> the median organic reactions
+        of designed graphics, and reach more people besides. They are <b>23% of what gets posted.</b></p>
       </div>
       <dl class="figs">
-        <div class="fig"><dt>Views / impressions</dt><dd>4.33M</dd><p>Facebook is 89% of it</p></div>
-        <div class="fig"><dt>Interactions</dt><dd>20,923</dd><p>Reactions, comments, shares</p></div>
-        <div class="fig"><dt>New followers</dt><dd>1,539</dd><p>Four measurable accounts</p></div>
-        <div class="fig"><dt>Blended engagement</dt><dd>0.48%</dd><p>Interactions &divide; views</p></div>
+        <div class="fig"><dt>Photo vs graphic</dt><dd>3.8&times;</dd><p>Median organic reactions, 15 vs 4</p></div>
+        <div class="fig"><dt>Real photos are only</dt><dd>23%</dd><p>Of everything published</p></div>
+        <div class="fig"><dt>Graphics boosted</dt><dd>64%</dd><p>vs 35% of real photos</p></div>
+        <div class="fig"><dt>Organic reach</dt><dd>144.6K</dd><p>188 posts, Mar 18 &ndash; Aug 31</p></div>
       </dl>
     </div>
 
     <div>
-      <div class="h"><h2>Channel ledger</h2><span>Engagement rate is interactions &divide; views on every row, so the column compares like with like.</span></div>
-      <table><thead><tr><th scope="col">Channel</th><th scope="col">Views</th><th scope="col">Interactions</th>
-        <th scope="col">Eng. rate</th><th scope="col">New followers</th><th scope="col">Link clicks</th></tr></thead>
-        <tbody id="ledger"></tbody></table>
+      <div class="h"><h2>Creative scorecard</h2><span>Organic only. Meta's reported &ldquo;from ads&rdquo; reach and reactions are subtracted from every post; 188 posts classified by eye.</span></div>
+      <table>
+        <thead><tr><th scope="col">Creative type</th><th scope="col">Posts</th><th scope="col">% of output</th>
+          <th scope="col">Median reach</th><th scope="col">Median reactions</th><th scope="col">Eng. rate</th>
+          <th scope="col">Shares / post</th></tr></thead>
+        <tbody id="score"></tbody>
+      </table>
     </div>
 
     <div>
-      <div class="h"><h2>Reach by month</h2><span>Each channel on its own scale &mdash; the shape is the point. Pale bars mark the weakest month.</span></div>
-      <div class="charts" id="cViews"></div>
+      <div class="h"><h2>Effort against return</h2><span>Real photographs take up a quarter of the calendar and bring back two fifths of the engagement. Designed graphics do the reverse.</span></div>
+      <p class="evkey">
+        <span><i style="background:var(--orange)"></i>Real photograph</span>
+        <span><i style="background:var(--bar2)"></i>Provider card</span>
+        <span><i style="background:var(--bar3)"></i>Designed graphic</span>
+      </p>
+      <div class="evr" id="evr"></div>
     </div>
 
     <div class="split">
       <div>
-        <div class="h"><h2>What the numbers say</h2></div>
-        <div class="find">
-          <h4>Reach fell 65%, engagement nearly tripled</h4>
-          <p>Facebook views dropped from <span class="k">627K in January</span> to <span class="k">219K in
-          August</span>, while the engagement rate climbed from a 0.18% floor in April to
-          <span class="k">0.52%</span> &mdash; the year's best month.</p>
-        </div>
-        <div class="find">
-          <h4>One post defined the year</h4>
-          <p>The Salem Health affiliation announcement (Jan 19) reached <span class="k">30,591</span> people with
-          197 reactions and 53 shares, entirely unpaid &mdash; more than double the next post.</p>
-        </div>
-        <div class="find">
-          <h4>The top posts by reactions are mostly bought</h4>
-          <p>Juneteenth leads with 534 reactions, but <span class="k">528 came from ads</span>. Strip the boost and
-          the organic leaderboard is all local substance: the affiliation, the Regence explainer, the Women's Center.</p>
-        </div>
-        <div class="find">
-          <h4>The small accounts outperform the flagship</h4>
-          <p>Family Birth Center returns <span class="k">3.26%</span> engagement on 4% of the reach &mdash; ten
-          times the main page. LinkedIn holds <span class="k">4.4%</span> on zero spend. X is dormant: 40 posts,
-          470 views, 3 likes.</p>
-        </div>
+        <div class="h"><h2>Top organic posts</h2><span>Ad reach removed</span></div>
+        <table class="posts">
+          <thead><tr><th scope="col">Post</th><th scope="col">Reach</th><th scope="col">React.</th><th scope="col">Type</th></tr></thead>
+          <tbody id="posts"></tbody>
+        </table>
       </div>
-
       <div>
-        <div class="h"><h2>Top posts</h2><span>By reach</span></div>
-        <table class="posts"><thead><tr><th scope="col">Post</th><th scope="col">Reach</th>
-          <th scope="col">React.</th><th scope="col">Shares</th><th scope="col">Source</th></tr></thead>
-          <tbody id="posts"></tbody></table>
+        <div class="h"><h2>Channel ledger</h2><span>Full period, paid included</span></div>
+        <table>
+          <thead><tr><th scope="col">Channel</th><th scope="col">Views</th><th scope="col">Interactions</th><th scope="col">Eng.</th></tr></thead>
+          <tbody id="ledger"></tbody>
+        </table>
       </div>
     </div>
 
     <div class="split">
       <div>
-        <div class="h"><h2>What's working</h2></div>
+        <div class="h"><h2>What this means</h2></div>
         <ul class="list">
-          <li><b>Substantive local news.</b> Affiliation updates, construction milestones and new providers are the only posts clearing 5,000 organic reach.</li>
-          <li><b>Rising engagement quality.</b> Four of the last five Facebook months beat the spring floor.</li>
-          <li><b>Link clicks up 128%</b> against the preceding 243 days &mdash; 49,322 in eight months.</li>
-          <li><b>LinkedIn's organic base.</b> 4.4% engagement and steady growth with no budget behind it.</li>
+          <li><b>The staff are the content.</b> A real photograph of people at work is the single most reliable
+          organic performer you have, at 15 median reactions against 4.</li>
+          <li><b>You are rationing your best format.</b> Real photos are 23% of output. Moving them to half would
+          lift organic engagement without a dollar of spend.</li>
+          <li><b>Graphics do earn their shares.</b> 2.31 shares per post against 1.35 for photos. Event and
+          announcement creative is built to be forwarded, and that is a real job worth keeping.</li>
+          <li><b>Provider cards sit in between.</b> A real face in a branded frame lands at 6 median reactions:
+          better than a graphic, well short of a candid.</li>
         </ul>
       </div>
       <div>
-        <div class="h"><h2>What we're working on</h2></div>
+        <div class="h"><h2>What we're changing</h2></div>
         <ul class="list b">
-          <li><b>Arresting the Facebook reach slide.</b> Steady across all eight months, not a one-month shock &mdash; it needs a content answer.</li>
-          <li><b>Rebalancing the boost budget.</b> Spend sits on holiday greetings; move it behind service-line and access posts.</li>
-          <li><b>Growing Instagram's scale.</b> Its 1.04% rate triples Facebook's, but it reaches 7% as many people.</li>
-          <li><b>Deciding on X,</b> and confirming the August link-click drop is behaviour, not a tracking break.</li>
+          <li><b>Shift the mix toward the camera.</b> Target roughly half of posts as real photography, drawn from
+          rounds, new hires, procedures, community events.</li>
+          <li><b>Redirect the boost budget.</b> 64% of graphics get money behind them against 35% of photos. The
+          spend is propping up the weaker format.</li>
+          <li><b>Keep graphics for what they do best:</b> dates, registration, awareness months, anything
+          where the share is the call to action.</li>
+          <li><b>Build a capture habit.</b> The constraint is supply, not appetite: someone needs a phone in hand
+          on rounds and at every community event.</li>
         </ul>
       </div>
     </div>
 
     <div class="foot">
-      <p><b>Method.</b> Facebook and Instagram from Meta Business Suite &rarr; Insights &rarr; Results, read as daily
-      series and summed by calendar month; LinkedIn from Page Admin &rarr; Analytics; X from the public profile
-      timeline. Pulled September 10, 2026. <b>&ldquo;Views&rdquo; is Meta's definition</b> &mdash; all content views
-      including repeats, not unique reach; deduplicated reach was 1.1M (Facebook), 139K (Instagram), 46.2K (Family
-      Birth Center). LinkedIn's own dashboard reports 4.4% because its formula also counts clicks.</p>
-      <p class="caveat"><b>X coverage is partial.</b> X Analytics sits behind X Premium, which this account does not
-      have, and the public timeline stops serving posts older than mid-May. The X row rests on a
-      <b>40-post sample, May 25 &ndash; Sep 10</b>, using public view counts.</p>
+      <p><b>Method.</b> Facebook and Instagram post data from Meta Business Suite &rarr; Insights &rarr; Content,
+      Stories excluded. Each post's creative thumbnail was viewed and hand-sorted into real photograph, provider
+      portrait card, or designed graphic; that classification is our judgement, not a Meta field. All post figures
+      are organic: Meta reports a &ldquo;from ads&rdquo; portion for reach and reactions on boosted posts and that
+      portion is subtracted. Channel ledger figures cover the full period and include paid. Pulled September 10, 2026.</p>
+      <p class="cav"><b>Why the creative window starts March 18.</b> Meta's Content table stops serving rows at
+      roughly 200; 193 posts were retrievable in one pass, reaching back to March 18. The comparison rests on
+      <b>188 posts with reach across 5.5 months</b>, which is ample, but it is not the full eight.</p>
     </div>
     <div class="sig">
       <span>Santiam Hospital &amp; Clinics &middot; Stayton, Oregon</span>
@@ -273,59 +256,51 @@ tr.sum td{border-top:1.5px solid var(--ink);border-bottom:none;font-weight:700;c
 </div>
 
 <script>
-const M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug"];
-const D={
- fb :{n:"Facebook", w:"Santiam Hospital &amp; Clinics",
-      views:[627354,592186,534654,531682,576591,464295,322109,219245],
-      t:{views:3868116,inter:12655,er:"0.33%",fol:801,clicks:49322}},
- ig :{n:"Instagram", w:"santiamhospitalandclinics",
-      views:[58920,41789,33274,23194,24307,41813,35210,25363],
-      t:{views:283870,inter:2962,er:"1.04%",fol:250,clicks:4983}},
- fbc:{n:"Facebook", w:"Family Birth Center",
-      views:[18040,17534,20045,23184,13432,17939,25058,14330],
-      t:{views:149562,inter:4875,er:"3.26%",fol:300,clicks:87}},
- li :{n:"LinkedIn", w:"Santiam Hospital &amp; Clinics",
-      views:[3934,4574,3215,4457,4205,3969,2014,1965],
-      t:{views:28333,inter:428,er:"1.51%",fol:188,clicks:"&mdash;"}}
-};
-const K=["fb","ig","fbc","li"];
-const nf=v=>typeof v==="number"?v.toLocaleString("en-US"):v;
+const S=[
+ {k:"Real photograph", d:"Staff, patients, events, facilities", n:43, pct:"22.9%", reach:511, react:15, er:"1.81%", sh:"1.35", cls:""},
+ {k:"Provider card",   d:"Real headshot in a branded template", n:13, pct:"6.9%",  reach:499, react:6,  er:"1.56%", sh:"0.85", cls:"g2"},
+ {k:"Designed graphic",d:"Text, layout, stock, event flyers",   n:132,pct:"70.2%", reach:393, react:4,  er:"1.42%", sh:"2.31", cls:"g3"}
+];
+const maxReact=Math.max(...S.map(r=>r.react));
+document.getElementById("score").innerHTML=S.map(r=>`<tr>
+ <td><span class="cn">${r.k}</span><span class="cs">${r.d}</span></td>
+ <td>${r.n}</td><td>${r.pct}</td><td>${r.reach.toLocaleString("en-US")}</td>
+ <td><span class="dbwrap"><span class="db ${r.cls}" style="width:${Math.round(r.react/maxReact*54)}px"></span>
+   <span class="big${r.cls?"":" win"}">${r.react}</span></span></td>
+ <td>${r.er}</td><td>${r.sh}</td></tr>`).join("");
 
-const led=document.getElementById("ledger");
-K.forEach(k=>{const d=D[k],t=d.t;
-  led.insertAdjacentHTML("beforeend",`<tr><td><span class="tick"></span><span class="cn">${d.n}</span> <span class="cs">${d.w}</span></td>
-  <td>${nf(t.views)}</td><td>${nf(t.inter)}</td><td class="rate">${t.er}</td><td>${nf(t.fol)}</td><td>${nf(t.clicks)}</td></tr>`);});
-led.insertAdjacentHTML("beforeend",`<tr><td><span class="tick dim"></span><span class="cn">X (Twitter)</span> <span class="cs">@SantiamHospital &middot; 40-post sample</span></td>
-  <td>470</td><td>3</td><td class="rate">0.64%</td><td>n/a</td><td>&mdash;</td></tr>`);
-led.insertAdjacentHTML("beforeend",`<tr class="sum"><td>All channels</td><td>4,330,351</td><td>20,923</td>
-  <td>0.48%</td><td>1,539</td><td>54,392</td></tr>`);
-
-const cv=document.getElementById("cViews");
-K.forEach(k=>{const d=D[k],a=d.views,max=Math.max(...a),min=Math.min(...a);
-  const f=v=>v>=1000?Math.round(v/1000)+"K":v;
-  const bars=a.map((v,i)=>`<div class="bar${v===min?" low":""}" style="height:${Math.max(2,Math.round(v/max*100))}%" title="${M[i]}: ${f(v)}"></div>`).join("");
-  cv.insertAdjacentHTML("beforeend",`<div class="ch"><h3>${d.n}</h3><p class="who">${d.w}</p>
-    <div class="plot">${bars}</div><div class="mo">${M.map(m=>`<span>${m[0]}</span>`).join("")}</div>
-    <div class="cf"><span>low <b>${f(min)}</b></span><span>high <b>${f(max)}</b></span></div></div>`);});
+/* effort vs return: share of output, of organic reach, of organic reactions */
+const EV=[
+ {lab:"Share of posts",      v:[22.9, 6.9, 70.2]},
+ {lab:"Share of reach",      v:[38.5, 8.0, 53.5]},
+ {lab:"Share of reactions",  v:[42.1, 7.4, 50.5]}
+];
+document.getElementById("evr").innerHTML=EV.map(r=>`<div class="evrow">
+ <span class="evlab">${r.lab}</span>
+ <span class="evbar">${r.v.map((p,i)=>`<span class="seg s${i+1}" style="width:${p}%">${p.toFixed(0)}%</span>`).join("")}</span>
+</div>`).join("");
 
 const P=[
- ["Salem Health affiliation announcement","Jan 19 &middot; Facebook + Instagram",30591,197,53,0],
- ["Coffee Corner hours expanded","Jun 29 &middot; Facebook",12909,147,2,1],
- ["CEO message on Regence Blue Cross Blue Shield","Jan 21 &middot; Facebook + Instagram &middot; Reel",12330,157,39,0],
- ["Santiam Women's Center construction underway","Feb 11 &middot; Facebook",8780,148,5,0],
- ["Care for Mill City, Idanha and Detroit","May 28 &middot; Facebook",7376,135,17,0],
- ["Juneteenth","Jun 19 &middot; Facebook",1580,534,6,1]
+ ["Mill City, Idanha and Detroit service update","May 28 &middot; Facebook",7376,135,"gr"],
+ ["Coffee Corner hours expanded","Jun 29 &middot; Facebook",12566,113,"ph"],
+ ["When seconds count, you shouldn't have to drive","Jul 29 &middot; Facebook",5536,89,"ph"],
+ ["Another year in the books, 37th Annual","Jun 10 &middot; Facebook + Instagram",2892,75,"gr"],
+ ["A fantastic day at the Aumsville Corn Festival","Aug 17 &middot; Instagram",2851,54,"ph"],
+ ["Proud to celebrate with the community","Jul 6 &middot; Facebook + Instagram",3450,53,"ph"]
 ];
 document.getElementById("posts").innerHTML=P.map(p=>`<tr>
  <td><span class="pw">${p[0]}</span><span class="pd">${p[1]}</span></td>
- <td>${nf(p[2])}</td><td>${nf(p[3])}</td><td>${p[4]}</td>
- <td><span class="pill ${p[5]?"g":"o"}">${p[5]?"Paid":"Organic"}</span></td></tr>`).join("");
+ <td>${p[2].toLocaleString("en-US")}</td><td>${p[3]}</td>
+ <td><span class="tagp ${p[4]}">${p[4]==="ph"?"Photo":"Graphic"}</span></td></tr>`).join("");
 
-/* fit check — logs overflow so the sheet can be tuned to exactly one page */
-window.addEventListener("load",()=>{
-  const s=document.getElementById("sheet"), i=s.querySelector(".inner");
-  console.log("FIT sheet=%d content=%d overflow=%d",
-    s.clientHeight, i.scrollHeight + s.querySelector(".band").offsetHeight + 3,
-    (i.scrollHeight + s.querySelector(".band").offsetHeight + 3) - s.clientHeight);
-});
+const C=[
+ ["Facebook","Santiam Hospital &amp; Clinics","3,868,116","12,655","0.33%"],
+ ["Instagram","santiamhospitalandclinics","283,870","2,962","1.04%"],
+ ["Facebook","Family Birth Center","149,562","4,875","3.26%"],
+ ["LinkedIn","100% organic, zero paid","28,333","428","1.51%"],
+ ["X (Twitter)","40-post sample","470","3","0.64%"]
+];
+document.getElementById("ledger").innerHTML=C.map(c=>`<tr>
+ <td><span class="cn" style="font-size:8px">${c[0]}</span><span class="cs">${c[1]}</span></td>
+ <td>${c[2]}</td><td>${c[3]}</td><td>${c[4]}</td></tr>`).join("");
 </script>

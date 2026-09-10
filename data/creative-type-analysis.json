@@ -1,0 +1,37 @@
+{
+  "question": "Do authentic staff/patient/event photos outperform designed graphics, organically?",
+  "scope": "Santiam Hospital & Clinics Facebook page + Instagram, posts only (Stories excluded)",
+  "window": "2026-03-18 to 2026-08-31",
+  "window_note": "Meta's Content table stops serving rows at ~200; 193 posts were retrievable in one view, which reaches back to Mar 18. The channel-level ledger still covers the full Jan 1 - Aug 31 period.",
+  "n_posts_classified": 193,
+  "n_posts_with_reach": 188,
+  "n_excluded_no_image": 4,
+  "method": "Every post's creative thumbnail was viewed and hand-classified into one of three buckets. Metrics are ORGANIC ONLY: Meta reports a 'from ads' portion for both reach and reactions on boosted posts, and that portion is subtracted. Classification is a manual visual judgement, not a Meta field.",
+  "buckets": {
+    "photo": "Authentic photo - real staff, patients, events, facilities. Little or no graphic overlay.",
+    "provider": "Provider portrait card - a real staff headshot placed in a branded template (Welcome / Provider Spotlight).",
+    "graphic": "Designed graphic - heavy text and layout, stock imagery, illustration, event flyers, awareness-month creative."
+  },
+  "results": {
+    "photo":    {"posts":43,  "share_of_output_pct":22.9, "boosted":15, "boost_rate_pct":34.9,
+                 "organic_reach":{"sum":55747,"median":511,"mean":1296},
+                 "organic_reactions":{"sum":911,"median":15,"mean":21.2},
+                 "shares_per_post":1.35, "engagement_rate_median_pct":1.81, "engagement_rate_pooled_pct":1.63},
+    "provider": {"posts":13,  "share_of_output_pct":6.9,  "boosted":11, "boost_rate_pct":84.6,
+                 "organic_reach":{"sum":11517,"median":499,"mean":886},
+                 "organic_reactions":{"sum":160,"median":6,"mean":12.3},
+                 "shares_per_post":0.85, "engagement_rate_median_pct":1.56, "engagement_rate_pooled_pct":1.39},
+    "graphic":  {"posts":132, "share_of_output_pct":70.2, "boosted":85, "boost_rate_pct":64.4,
+                 "organic_reach":{"sum":77380,"median":392.5,"mean":586},
+                 "organic_reactions":{"sum":1091,"median":4,"mean":8.3},
+                 "shares_per_post":2.31, "engagement_rate_median_pct":1.42, "engagement_rate_pooled_pct":1.41}
+  },
+  "headline_findings": [
+    "Authentic photos earn 3.8x the median organic reactions of designed graphics (15 vs 4).",
+    "Authentic photos reach 1.3x more people at the median (511 vs 393) and 2.2x at the mean (1,296 vs 586).",
+    "Authentic photos are only 23% of output; designed graphics are 70%.",
+    "Boost money flows the wrong way: 64% of graphics were boosted vs 35% of photos.",
+    "COUNTERPOINT, kept deliberately: designed graphics earn MORE shares per post (2.31 vs 1.35). Event and announcement graphics are built to be forwarded, and that is a real strength - the share is the call to action."
+  ],
+  "totals_organic": {"reach":144644, "reactions":2162}
+}
